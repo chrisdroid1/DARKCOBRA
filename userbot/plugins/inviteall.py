@@ -1,8 +1,6 @@
 
 
 
-from userbot import *
-from userbot.utils import admin_cmd
 from telethon.tl.types import Channel, Chat, User
 from telethon.tl import functions, types
 from telethon.tl.functions.messages import  CheckChatInviteRequest, GetFullChatRequest
@@ -73,7 +71,7 @@ def user_full_name(user):
 
 
 
-@borg.on(admin_cmd(pattern=r"allinvite ?(.*)"))
+@kigcmd(command='allinvite')
 async def get_users(event):   
     sender = await event.get_sender() ; me = await event.client.get_me()
     if not sender.id == me.id:
